@@ -7,6 +7,7 @@ const healthRoutes = require("./routes/health.routes");
 const authRoutes = require("./routes/auth.routes");
 const jobRoutes = require("./routes/job.routes");
 const feedbackRoutes = require("./routes/feedback.routes");
+const cronRoutes = require("./routes/cron.routes");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(healthRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api", jobRoutes);
 app.use("/api/feedback", feedbackRoutes);
+app.use("/api/cron", cronRoutes);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));

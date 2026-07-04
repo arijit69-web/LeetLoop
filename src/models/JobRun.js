@@ -5,7 +5,7 @@ const jobRunSchema = new mongoose.Schema(
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", index: true },
     trigger: {
       type: String,
-      enum: ["manual_api", "scheduler", "cli"],
+      enum: ["manual_api", "scheduler", "cli", "vercel_cron"],
       default: "manual_api",
       index: true,
     },
