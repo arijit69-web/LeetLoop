@@ -1,17 +1,15 @@
 const byId = (id) => document.getElementById(id);
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://leet-loop.vercel.app";
 
 const elements = {
   token: byId("token"),
   fetchTokenBtn: byId("fetchTokenBtn"),
-  leetcodeUsername: byId("leetcodeUsername"),
   connectBtn: byId("connectBtn"),
   status: byId("status"),
 };
 
 const STORAGE_KEYS = {
   token: "token",
-  leetcodeUsername: "leetcodeUsername",
 };
 
 const setStatus = (message) => {
@@ -28,15 +26,13 @@ const getCookieValue = async (name) => {
 };
 
 const loadSettings = async () => {
-  const stored = await chrome.storage.local.get([STORAGE_KEYS.token, STORAGE_KEYS.leetcodeUsername]);
+  const stored = await chrome.storage.local.get([STORAGE_KEYS.token]);
   elements.token.value = stored.token || "";
-  elements.leetcodeUsername.value = stored.leetcodeUsername || "";
 };
 
 const saveSettings = async () => {
   await chrome.storage.local.set({
     [STORAGE_KEYS.token]: elements.token.value.trim(),
-    [STORAGE_KEYS.leetcodeUsername]: elements.leetcodeUsername.value.trim(),
   });
 };
 
@@ -86,10 +82,8 @@ const connect = async () => {
 
   const backendUrl = BACKEND_URL;
   const token = elements.token.value.trim();
-  const username = elements.leetcodeUsername.value.trim();
-
-  if (!token || !username) {
-    setStatus("Username and token are required. Click 'Auto-Fill Token' first.");
+  if (!token) {
+    setStatus("Token is required. Click 'Auto-Fill Token' first.");
     return;
   }
 
@@ -103,7 +97,6 @@ const connect = async () => {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        leetcodeUsername: username,
         sessionToken,
         csrfToken,
       }),

@@ -2,11 +2,11 @@
   "manifest_version": 3,
   "name": "LeetLoop Connector",
   "description": "Send your current LeetCode browser auth to LeetLoop backend.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "permissions": ["storage", "cookies", "scripting", "tabs"],
   "host_permissions": [
     "https://leetcode.com/*",
-    "http://localhost:3000/*"
+    "https://leet-loop.vercel.app/*"
   ],
   "action": {
     "default_title": "LeetLoop Connector",
