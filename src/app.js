@@ -22,9 +22,9 @@ app.get("/favicon.ico", (req, res) => {
 
 app.use(healthRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/cron", cronRoutes);
 app.use("/api", jobRoutes);
 app.use("/api/feedback", feedbackRoutes);
-app.use("/api/cron", cronRoutes);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
