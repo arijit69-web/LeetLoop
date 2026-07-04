@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetLoop Connector</title>
+    <style>
+      :root {
+        --bg: #0d1b2a;
+        --card: #1b263b;
+        --ink: #e0e1dd;
+        --muted: #9cb0c4;
+        --accent: #f4a261;
+      }
+      body {
+        margin: 0;
+        padding: 12px;
+        width: 320px;
+        background: linear-gradient(155deg, #0d1b2a, #1b263b);
+        color: var(--ink);
+        font-family: "Segoe UI", sans-serif;
+      }
+      h1 {
+        font-size: 16px;
+        margin: 0 0 10px;
+      }
+      .group {
+        margin-bottom: 8px;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      input {
+        width: 100%;
+        border: 1px solid #2a415f;
+        background: var(--card);
+        color: var(--ink);
+        border-radius: 6px;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100%;
+        margin-top: 10px;
+        border: 0;
+        border-radius: 8px;
+        padding: 9px;
+        font-weight: 700;
+        cursor: pointer;
+        background: var(--accent);
+        color: #1f1304;
+      }
+      #status {
+        margin-top: 10px;
+        font-size: 12px;
+        color: var(--muted);
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LeetLoop Connector</h1>
+
+    <div class="group">
+      <label for="token">LeetLoop JWT token</label>
+      <input id="token" type="password" placeholder="Paste token from web login" />
+      <button id="fetchTokenBtn" type="button">Auto-Fill Token</button>
+    </div>
+
+    <div class="group">
+      <label for="leetcodeUsername">LeetCode username</label>
+      <input id="leetcodeUsername" type="text" placeholder="your_username" />
+    </div>
+
+    <button id="connectBtn" type="button">Connect LeetCode</button>
+    <div id="status">Idle</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

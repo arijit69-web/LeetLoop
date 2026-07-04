@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetLoop Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="page-shell">
+      <nav class="panel app-nav">
+        <div class="nav-left">
+          <h2>LeetLoop</h2>
+          <p id="navStatus">Checking session...</p>
+        </div>
+        <div class="nav-links">
+          <a class="nav-link" data-nav="home" href="/">Home</a>
+          <a class="nav-link" data-nav="revisions" href="/revisions.html">Revisions</a>
+          <a class="nav-link" data-nav="calendar" href="/calendar.html">Calendar</a>
+          <a class="nav-link" data-nav="jobs" href="/jobs.html">Jobs</a>
+          <a class="nav-link" data-nav="connect" href="/connect.html">Connect</a>
+          <a class="nav-link" data-nav="feedback" href="/feedback.html">Feedback</a>
+        </div>
+        <div class="hero-actions nav-actions">
+          <button id="navRegisterBtn" class="btn btn-primary" type="button">Register</button>
+          <button id="navLoginBtn" class="btn btn-ghost" type="button">Login</button>
+          <button id="navLogoutBtn" class="btn btn-ghost" type="button">Logout</button>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <p class="chip">Workspace • <span id="navUser">Guest</span></p>
+        <h1>Welcome to LeetLoop</h1>
+        <p id="homeSubtitle" class="hero-sub">Loading your account overview...</p>
+      </header>
+
+      <section class="stats-grid" id="homeStats">
+        <article class="stat-card">
+          <h2>Total Solved</h2>
+          <p id="homeTotalSolved">-</p>
+        </article>
+        <article class="stat-card">
+          <h2>Due Today</h2>
+          <p id="homeDueToday">-</p>
+        </article>
+        <article class="stat-card">
+          <h2>Pending Revisions</h2>
+          <p id="homePending">-</p>
+        </article>
+        <article class="stat-card highlight">
+          <h2>Connected</h2>
+          <p id="homeConnected">-</p>
+        </article>
+      </section>
+
+    </main>
+
+    <script src="/shared.js"></script>
+    <script src="/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetLoop Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="calendar">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="page-shell">
+      <nav class="panel app-nav">
+        <div class="nav-left"><h2>LeetLoop</h2><p id="navStatus">Checking session...</p></div>
+        <div class="nav-links">
+          <a class="nav-link" data-nav="home" href="/">Home</a>
+          <a class="nav-link" data-nav="revisions" href="/revisions.html">Revisions</a>
+          <a class="nav-link" data-nav="calendar" href="/calendar.html">Calendar</a>
+          <a class="nav-link" data-nav="jobs" href="/jobs.html">Jobs</a>
+          <a class="nav-link" data-nav="connect" href="/connect.html">Connect</a>
+          <a class="nav-link" data-nav="feedback" href="/feedback.html">Feedback</a>
+        </div>
+        <div class="hero-actions nav-actions">
+          <button id="navRegisterBtn" class="btn btn-primary" type="button">Register</button>
+          <button id="navLoginBtn" class="btn btn-ghost" type="button">Login</button>
+          <button id="navLogoutBtn" class="btn btn-ghost" type="button">Logout</button>
+        </div>
+      </nav>
+
+      <section class="panel">
+        <div class="panel-head"><h3>Revision Calendar</h3><p id="calendarMeta">Loading...</p></div>
+        <div class="calendar-head">
+          <button id="calendarPrevBtn" class="btn btn-ghost" type="button">Prev</button>
+          <strong id="calendarTitle">Month Year</strong>
+          <button id="calendarNextBtn" class="btn btn-ghost" type="button">Next</button>
+        </div>
+        <div class="calendar-weekdays">
+          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+        <div class="calendar-detail">
+          <h4 id="calendarDayTitle">Select a day</h4>
+          <div class="calendar-detail-columns">
+            <div><p class="detail-label">Due</p><ul id="calendarDueList" class="detail-list"></ul></div>
+            <div><p class="detail-label">Completed</p><ul id="calendarDoneList" class="detail-list"></ul></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/shared.js"></script>
+    <script src="/calendar.js"></script>
+  </body>
+</html>
